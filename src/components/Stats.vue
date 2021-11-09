@@ -4,7 +4,7 @@
         <p class="last-updated">
           Today:        
         </p>
-        <v-card outlined class="amber mt-n3  mb-2">
+        <v-card outlined class="green light mt-n3  mb-2">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="mb-1 stat-title">
@@ -16,11 +16,11 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-doctor</v-icon>
+              <v-icon class="" size="32px">mdi-shield-plus</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
-        <v-card outlined class="blue lighten-2 mb-2">
+        <v-card outlined class="teal lighten-4 mb-2">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="mb-1 stat-title">
@@ -32,11 +32,11 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-account-circle</v-icon>
+              <v-icon class="" size="32px">mdi-shield-check</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
-        <v-card outlined class="success mb-2">
+        <v-card outlined class="light-green lighten-4 mb-2">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="mb-1 stat-title">
@@ -48,11 +48,11 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-account-multiple-check</v-icon>
+              <v-icon class="" size="32px">mdi-account-multiple</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
-        <v-card outlined class="orange lighten-2 mb-2">
+        <v-card outlined class="orange lighten-4 mb-2">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="mb-1 stat-title">
@@ -64,7 +64,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-account-alert</v-icon>
+              <v-icon size="32px">mdi-account-group</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -72,7 +72,7 @@
         <p class="last-updated mt-4">
           Yesterday:
         </p>
-        <v-card outlined class="amber mt-n3 mb-2">
+        <v-card outlined class="green light mt-n3 mb-2">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="mb-1 stat-title">
@@ -84,11 +84,11 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-doctor</v-icon>
+              <v-icon class="" size="32px">mdi-shield-plus</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
-        <v-card outlined class="blue lighten-2 mb-2">
+        <v-card outlined class="teal lighten-4 mb-2">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="mb-1 stat-title">
@@ -100,11 +100,11 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-account-circle</v-icon>
+              <v-icon class="" size="32px">mdi-shield-check</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
-        <v-card outlined class="success mb-2">
+        <v-card outlined class="light-green lighten-4 mb-2">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="mb-1 stat-title">
@@ -116,12 +116,12 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-account-multiple-check</v-icon>
+              <v-icon class="" size="32px">mdi-account-multiple</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
         
-        <v-card outlined class="orange lighten-2 mb-2">
+        <v-card outlined class="orange lighten-4 mb-2">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="mb-1 stat-title">
@@ -133,7 +133,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-account-alert</v-icon>
+              <v-icon size="32px">mdi-account-group</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
