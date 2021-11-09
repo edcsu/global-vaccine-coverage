@@ -1,5 +1,5 @@
 <template>
-    <highcharts :constructor-type="'mapChart'" :options="mapOptions" class="map"></highcharts>
+    <highcharts :constructor-type="'mapChart'" :options="mapOptions" class="map" ref="chart"></highcharts>
 </template>
 
 <script>
@@ -13,7 +13,7 @@ mapInit(Highcharts)
 exportingInit(Highcharts)
 
 // eslint-disable-next-line dot-notation
-Highcharts.maps['globalTrackerMap'] = mapData
+// Highcharts.maps['globalTrackerMap'] = mapData
 
 export default {
   name: 'GlobalMap',
@@ -24,11 +24,11 @@ export default {
     return {
       mapOptions: {
         chart: {
-          map: 'globalTrackerMap',
+          map: mapData,
           backgroundColor: '#BDBDBD'
         },
         title: {
-          text: 'Total COVID19 cases per country'
+          text: ''
         },
         legend: {
           enabled: false

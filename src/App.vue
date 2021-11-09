@@ -14,10 +14,10 @@
             <Stats class="scrollable pr-1 mb-5" :summaryDetails="globalSummary" v-if="globalLoaded" />
             <StatsSkeleton class="scrollable pr-5 mb-5" v-else />
           </v-col>
-          <!-- <v-col cols="12" xl="10" lg="10" md="10" sm="12" xs="12" class="pb-0">
+          <v-col cols="12" xl="10" lg="10" md="10" sm="12" xs="12" class="pb-0">
             <GlobalMap :countriesData=countriesDetails v-if="countriesLoaded" />
-            <MapSkeleton v-else />
-          </v-col> -->
+            <!-- <MapSkeleton v-else /> -->
+          </v-col>
         </v-row>
       </v-container>
     </v-main>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-// import GlobalMap from './components/GlobalMap'
+import GlobalMap from './components/GlobalMap'
 import Header from './components/Header'
 import Footer from './components/Footer'
 // import MapSkeleton from './components/MapSkeleton'
@@ -35,7 +35,8 @@ import StatsSkeleton from '@/components/StatsSkeleton'
 
 import {
   getSpecificContent,
-  // getGeoJsonData
+  getContent,
+  getGeoJsonData
 } from '@/Helpers/helperMethods'
 
 import {
@@ -43,7 +44,7 @@ import {
   // globalTotals,
   vaccineDetails,
   // countryObject,
-  // countryTotals
+  countryTotals,
   fullVaccineTimeline
 } from '@/Helpers/apiHelpers'
 
@@ -54,7 +55,8 @@ export default {
     Header,
     Footer,
     Stats,
-    StatsSkeleton
+    StatsSkeleton,
+    GlobalMap
   },
 
   data: () => ({
@@ -77,15 +79,15 @@ export default {
 
   created () {
     this.getGlobalDetails()
-    // this.getCountryDetails()
+    this.getCountryDetails()
   },
 
   mounted () {
     this.getGlobalDetails()
-    // this.getCountryDetails()
+    this.getCountryDetails()
     setInterval(() => {
       this.getGlobalDetails()
-      // this.getCountryDetails()
+      this.getCountryDetails()
     }, this.timeInterval)
   },
 
@@ -93,7 +95,6 @@ export default {
     async getGlobalDetails () {
       this.globalLoaded = false
       try {
-        // baseUrl, route, query
         const response = await getSpecificContent(baseApiUrl, 
           `${vaccineDetails.vaccine}/${vaccineDetails.coverage}`,
           `${vaccineDetails.lastDays}=2&${vaccineDetails.fullData}=true`)
@@ -108,20 +109,25 @@ export default {
       }
     },
 
-    // async getCountryDetails () {
-    //   this.countriesLoaded = false
-    //   try {
-    //     const response = await getContent(baseApiUrl, countryTotals.countries)
-    //     this.countriesDetails = getGeoJsonData(response.data)
-    //     this.countriesLoaded = true
-    //   } catch (error) {
-    //     this.countriesLoaded = false
-    //     console.error(error)
-    //     this.snackbarText = 'Failed to get data. Refresh again'
-    //     this.snackbarColor = 'error'
-    //     this.showSnackbar = true
-    //   }
-    // }
+    async getCountryDetails () {
+      this.countriesLoaded = false
+      try {
+        // this.countriesDetails = getGeoJsonData(response.data)
+        // const response = await getSpecificContent(baseApiUrl, 
+        //   `${vaccineDetails.vaccine}/${vaccineDetails.coverage}/${vaccineDetails.countries}`,
+        //   `${vaccineDetails.lastDays}=2&${vaccineDetails.fullData}=true`)
+        // this.countriesDetails = response.data
+        const response = await getContent(baseApiUrl, countryTotals.countries)
+        this.countriesDetails = getGeoJsonData(response.data)
+        this.countriesLoaded = true
+      } catch (error) {
+        this.countriesLoaded = false
+        console.error(error)
+        this.snackbarText = 'Failed to get data. Refresh again'
+        this.snackbarColor = 'error'
+        this.showSnackbar = true
+      }
+    }
   }
 };
 </script>

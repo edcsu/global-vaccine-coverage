@@ -154,3 +154,30 @@ export function timeAgo (dateParam) {
 
   return getFormattedDate(date) // 10. January 2017. at 10:20
 }
+
+/**
+ * getGeoJsonData
+ * @description Takes in an array of objects and returns an array of GeoJson formatted objects
+ */
+ export function getGeoJsonData (countries) {
+  return {
+    type: 'FeatureCollection',
+    features: countries.map((country = {}) => {
+      const { countryInfo = {} } = country
+      const { lat, long: lng } = countryInfo
+      
+      return {
+        type: 'Feature',
+        code: countryInfo.iso2,
+        z: country.cases,
+        properties: {
+          ...country
+        },
+        geometry: {
+          type: 'Point',
+          coordinates: [lng, lat]
+        }
+      }
+    })
+  }
+}

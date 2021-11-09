@@ -29,6 +29,7 @@ Vue.filter('convertToTimeAgo', value => {
 })
 
 Vue.use(HighchartsVue)
+
 new Vue({
   vuetify,
   render: h => h(App)
