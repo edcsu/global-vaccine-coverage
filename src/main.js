@@ -3,6 +3,8 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import HighchartsVue from 'highcharts-vue'
 import { convertUnixTime, formattoLocalDate, timeAgo } from './Helpers/helperMethods'
+import "./sass/main.css";
+import "./sass/variables.css";
 
 Vue.config.productionTip = false
 

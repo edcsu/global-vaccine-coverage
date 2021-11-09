@@ -33,13 +33,9 @@ export async function getContent (baseUrl, route) {
  * @description Takes in a baseUrl value, route, query parameters
  * and days name and returns content
  */
-export async function getSpecificContent (baseUrl, route, query, lastdays) {
+export async function getSpecificContent (baseUrl, route, query) {
   try {
-    const response = await axios.get(`${baseUrl}${route}/${query}`, {
-      params: {
-        lastdays: lastdays
-      }
-    })
+    const response = await axios.get(`${baseUrl}${route}?${query}`)
     return response
   } catch (error) {
     console.error(error)
