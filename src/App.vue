@@ -6,13 +6,13 @@
         <v-row class="pr-0 pb-0">
           <v-col cols="2" class="pr-0 d-none d-md-block" >
             <h2 v-if="globalLoaded">Global Summary</h2>
-            <!-- <v-skeleton-loader
-              class="mb-1"
+            <v-skeleton-loader
+              class="mt-1 mb-1"
               type="heading"
               v-else
-            ></v-skeleton-loader> -->
+            ></v-skeleton-loader>
             <Stats class="scrollable pr-1 mb-5" :summaryDetails="globalSummary" v-if="globalLoaded" />
-            <!-- <StatsSkeleton class="scrollable pr-5 mb-5" v-else /> -->
+            <StatsSkeleton class="scrollable pr-5 mb-5" v-else />
           </v-col>
           <!-- <v-col cols="12" xl="10" lg="10" md="10" sm="12" xs="12" class="pb-0">
             <GlobalMap :countriesData=countriesDetails v-if="countriesLoaded" />
@@ -31,7 +31,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 // import MapSkeleton from './components/MapSkeleton'
 import Stats from '@/components/Stats'
-// import StatsSkeleton from '@/components/StatsSkeleton'
+import StatsSkeleton from '@/components/StatsSkeleton'
 
 import {
   getSpecificContent,
@@ -54,6 +54,7 @@ export default {
     Header,
     Footer,
     Stats,
+    StatsSkeleton
   },
 
   data: () => ({
@@ -63,7 +64,7 @@ export default {
     timeInterval: 600000,
     loaded: false,
     eaLoaded: false,
-    globalLoaded: true,
+    globalLoaded: false,
     countriesLoaded: false,
     eaSummaryLoaded: false,
     defaultLoaded: false,
